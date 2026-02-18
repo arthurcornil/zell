@@ -1,5 +1,5 @@
 .{
-    .name = "zell",
+    .name = .zell,
     .version = "0.1.0",
     .paths = .{
         "build.zig",
