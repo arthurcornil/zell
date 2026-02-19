@@ -31,27 +31,3 @@ pub const Box = struct {
     h:  []const u8 = "─", 
     v:  []const u8 = "│", 
 };
-
-pub const Screen = struct {
-    rows: usize = 0,
-    cols: usize = 0,
-};
-
-pub fn winsize(wsz: *posix.winsize) c_int {
-    return std.posix.system.ioctl(posix.STDOUT_FILENO, std.posix.system.T.IOCGWINSZ, @intFromPtr(wsz));
-}
-
-pub fn getWindowSize() !Screen {
-    var screen: Screen = undefined;
-    var ws: posix.winsize = undefined;
-
-    if (winsize(&ws) == -1 or winsize.col == 0) {
-    } else {
-        std.debug.print("here: {}\r\n", .{ ws.row });
-        screen = Screen{
-            .rows = ws.row,
-            .cols = ws.col,
-        };
-    }
-    return screen;
-}
