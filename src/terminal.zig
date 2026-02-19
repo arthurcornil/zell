@@ -33,12 +33,12 @@ pub const Terminal = struct {
         return .{ .origTermios =  origTermios };
     }
 
-    pub fn deinit(self: Terminal, io: std.Io) void {
+    pub fn deinit(self: Terminal) void {
         const tty = std.Io.File.stdin().handle;
+        const stdout = std.Io.File.stdout().handle;
         std.posix.tcsetattr(tty, .FLUSH, self.origTermios) catch {};
 
-        const stdout = std.Io.File.stdout();
-        stdout.writeStreamingAll(io, "\x1b[?25h") catch {};
-        stdout.writeStreamingAll(io, "\x1b[?1049l") catch {};
+        std.c.write(stdout, "\x1b[?25h", 6);
+        std.c.write(stdout, "\x1b[?1049l", 8);
     }
 };
