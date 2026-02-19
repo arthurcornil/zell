@@ -1,7 +1,8 @@
 .{
     .name = .zell,
-    .version = "0.1.0",
+    .version = "0.0.1",
     .fingerprint = 0xe6969ff77faf04ee,
+    .minimum_zig_version = "0.16.0-dev.2535+b5bd49460",
     .paths = .{
         "build.zig",
         "build.zig.zon",
