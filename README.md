@@ -151,7 +151,7 @@ const pane1: Pane = .{
 };
 ```
 
-> [!INFO]
+> [!NOTE]
 > `height` and `width` attributes represent percentages of the screen. `paddingVertical` and `paddingHorizontal` represent a number of cells.
 
 Create your `Col`s. `Col`s consist of `Pane`s.
