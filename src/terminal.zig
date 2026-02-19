@@ -38,7 +38,7 @@ pub const Terminal = struct {
         const stdout = std.Io.File.stdout().handle;
         std.posix.tcsetattr(tty, .FLUSH, self.origTermios) catch {};
 
-        std.c.write(stdout, "\x1b[?25h", 6);
-        std.c.write(stdout, "\x1b[?1049l", 8);
+        _ = std.c.write(stdout, "\x1b[?25h", 6);
+        _ = std.c.write(stdout, "\x1b[?1049l", 8);
     }
 };
