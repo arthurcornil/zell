@@ -35,7 +35,7 @@ pub const Terminal = struct {
 
     pub fn deinit(self: Terminal, io: std.Io) void {
         const tty = std.Io.File.stdin().handle;
-        std.posix.tcsetattr(tty, .FLUSH, self.original_termios) catch {};
+        std.posix.tcsetattr(tty, .FLUSH, self.origTermios) catch {};
 
         const stdout = std.Io.File.stdout();
         stdout.writeStreamingAll(io, "\x1b[?25h") catch {};
