@@ -4,7 +4,7 @@ const posix = std.posix;
 pub const Terminal = struct {
     origTermios: posix.termios,
 
-    pub fn init(_: Terminal, io: std.Io) !Terminal {
+    pub fn init(io: std.Io) !Terminal {
         const tty = std.Io.File.stdin().handle;
         const origTermios = try posix.tcgetattr(tty);
         var termios = origTermios;
