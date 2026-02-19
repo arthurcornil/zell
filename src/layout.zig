@@ -55,7 +55,7 @@ pub const Layout = struct {
         var writer = std.Io.File.stdout().writer(io, &buffer);
         const stdout = &writer.interface;
 
-        try stdout.print("{s}{s}", .{ Ansi.ClearScreen, Ansi.HideCursor });
+        try stdout.print("{s}", .{ Ansi.ClearScreen });
         try stdout.print("\x1b[H", .{});
 
         var rectId: usize = 0;
