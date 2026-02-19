@@ -9,6 +9,8 @@ Zell uses zig `0.16.0-dev.2535+b5bd49460`
 
 # Getting started
 
+![Zell TUI example](zell_example.png)
+
 ## Add Zell to your project
 Fetch Zell
 ```bash
