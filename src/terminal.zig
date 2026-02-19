@@ -28,7 +28,7 @@ pub const Terminal = struct {
         //hide cursor
         try stdout.writeStreamingAll(io, "\x1b[?25l");
         //move to alternative buffer
-        try stdout.writeStreamingAll(io, "\x1b[?1049h", .{});
+        try stdout.writeStreamingAll(io, "\x1b[?1049h");
 
         return .{ .origTermios =  origTermios };
     }
@@ -39,6 +39,6 @@ pub const Terminal = struct {
 
         const stdout = std.Io.File.stdout();
         stdout.writeStreamingAll(io, "\x1b[?25h") catch {};
-        stdout.writeStreamingAll(io, "\x1b[?1049l", .{}) catch {};
+        stdout.writeStreamingAll(io, "\x1b[?1049l") catch {};
     }
 };
