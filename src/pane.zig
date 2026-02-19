@@ -33,8 +33,6 @@ pub const PaneList = struct {
 
 pub const PaneOptions = struct {
     boxed: bool = true,
-    rounded: bool = true,
-    selectable: bool = false,
     paddingVertical: u8 = 0,
     paddingHorizontal: u8 = 0,
     selectableLine: bool = false,
