@@ -1,6 +1,6 @@
 # Zell
 
-Zell is a minimalistic library for building TUIs for posix systems.
+Zell is a dependency-free minimalistic library for building TUIs on posix systems.
 
 Zell uses zig `0.16.0-dev.2535+b5bd49460`
 
